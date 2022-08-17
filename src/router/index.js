@@ -41,7 +41,7 @@ const router = new VueRouter({
     {
       path: '/energy-map',
       name: 'energy-map',
-      component: () => import('@/views/EnergyMap.vue'),
+      component: () => import('@/views/leaflet/Leaflet.vue'),
       meta: {
         pageTitle: '能源地圖',
         breadcrumb: [
