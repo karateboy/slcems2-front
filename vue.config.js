@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/tn-energy-iot/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/slcems/' : '/',
   css: {
     loaderOptions: {
       sass: {

@@ -1,7 +1,7 @@
 <template>
   <b-card no-body>
     <b-card-header>
-      <h4 class="mb-0">Goal Overview</h4>
+      <h1 class="mb-0">綠能滲透率</h1>
       <b-card-text class="font-medium-5 mb-0">
         <feather-icon
           icon="HelpCircleIcon"
@@ -18,27 +18,6 @@
       :options="goalOverviewRadialBar.chartOptions"
       :series="goalOverviewRadialBar.series"
     />
-    <b-row class="text-center mx-0">
-      <b-col
-        cols="6"
-        class="border-top border-right d-flex align-items-between flex-column py-1"
-      >
-        <b-card-text class="text-muted mb-0"> Completed </b-card-text>
-        <h3 class="font-weight-bolder mb-50">
-          {{ goal_overview.completed }}
-        </h3>
-      </b-col>
-
-      <b-col
-        cols="6"
-        class="border-top d-flex align-items-between flex-column py-1"
-      >
-        <b-card-text class="text-muted mb-0"> In Progress </b-card-text>
-        <h3 class="font-weight-bolder mb-0">
-          {{ goal_overview.inProgress }}
-        </h3>
-      </b-col>
-    </b-row>
   </b-card>
 </template>
 
@@ -52,9 +31,7 @@ export default {
     VueApexCharts,
     BCard,
     BCardHeader,
-    BRow,
     BCardText,
-    BCol,
   },
   data() {
     return {

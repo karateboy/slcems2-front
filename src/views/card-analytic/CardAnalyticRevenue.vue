@@ -1,7 +1,7 @@
 <template>
   <b-card no-body>
     <b-card-header>
-      <b-card-title>Revenue</b-card-title>
+      <b-card-title>即時用發電資訊</b-card-title>
       <feather-icon
         icon="SettingsIcon"
         size="18"
@@ -10,23 +10,6 @@
     </b-card-header>
 
     <b-card-body class="pb-0">
-      <div class="d-flex justify-content-start mb-3">
-        <div class="mr-2">
-          <b-card-text class="mb-50"> This Month </b-card-text>
-          <h3 class="font-weight-bolder">
-            <sup class="font-medium-1">$ </sup>
-            <span class="text-primary">{{ revenue.thisMonth }}</span>
-          </h3>
-        </div>
-        <div>
-          <b-card-text class="mb-50"> Last Month </b-card-text>
-          <h3 class="font-weight-bolder">
-            <sup class="font-medium-1">$ </sup>
-            <span>{{ revenue.lastMonth }}</span>
-          </h3>
-        </div>
-      </div>
-
       <!-- apex chart -->
       <vue-apex-charts
         type="line"
@@ -39,20 +22,13 @@
 </template>
 
 <script>
-import {
-  BCard,
-  BCardHeader,
-  BCardTitle,
-  BCardBody,
-  BCardText,
-} from 'bootstrap-vue';
+import { BCard, BCardHeader, BCardTitle, BCardBody } from 'bootstrap-vue';
 import VueApexCharts from 'vue-apexcharts';
 import { $themeColors } from '@themeConfig';
 
 export default {
   components: {
     VueApexCharts,
-    BCardText,
     BCard,
     BCardHeader,
     BCardTitle,

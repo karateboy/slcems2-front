@@ -14,7 +14,7 @@
       class="bookmark-wrapper align-items-center flex-grow-1 d-none d-lg-flex text-center"
     >
       <h1 class="m-0 pl-1 display-4 font-weight-bolder">
-        台南節電 – 智慧能源大數據平台
+        沙崙電能管理系統資訊平臺
       </h1>
     </div>
     <b-img

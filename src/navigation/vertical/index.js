@@ -7,19 +7,19 @@ export default [
     action: 'read',
   },
   {
-    title: '智慧電網',
+    title: '區域電力資訊',
     icon: 'CpuIcon',
     route: 'smart-grid',
     action: 'read',
   },
   {
-    title: '能源地圖',
+    title: '節電成效',
     icon: 'MapIcon',
     route: 'energy-map',
     action: 'read',
   },
   {
-    title: '下載及連結',
+    title: '友善連結',
     icon: 'DownloadIcon',
     route: 'download',
     action: 'read',
