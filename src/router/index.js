@@ -13,7 +13,7 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/views/HcHome.vue'),
+      component: () => import('@/views/Home.vue'),
       meta: {
         pageTitle: '首頁',
         breadcrumb: [
@@ -27,7 +27,7 @@ const router = new VueRouter({
     {
       path: '/smart-grid',
       name: 'smart-grid',
-      component: () => import('@/views/SmartGrid.vue'),
+      component: () => import('@/views/card-analytic/CardAnalytic.vue'),
       meta: {
         pageTitle: '智能電網',
         breadcrumb: [

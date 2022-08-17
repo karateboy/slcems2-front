@@ -47,7 +47,7 @@ export default {
   }
 }
 </style>
-`
+`;
 
 export const codeMarkerPolygon = `
 <template>
@@ -123,7 +123,7 @@ export default {
   }
 }
 </style>
-`
+`;
 
 export const codePopup = `
 <template>
@@ -170,7 +170,7 @@ export default {
   }
 }
 </style>
-`
+`;
 
 export const codeGeoJSON = `
 <template>
@@ -216,7 +216,7 @@ export default {
   }
 }
 </style>
-`
+`;
 
 export const codeLayerGroup = `
 <template>
@@ -563,7 +563,7 @@ export default {
   },
 }
 </script>
-`
+`;
 
 export const codeCustomIcon = `
 <template>
@@ -649,4 +649,4 @@ export default {
   }
 }
 </style>
-`
+`;

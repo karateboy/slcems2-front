@@ -1,33 +1,22 @@
 <template>
-  <b-card-code title="Layer Group">
+  <b-card-code title="能源圖層">
     <div>
-      <b-button
-        variant="outline-primary"
-        @click="fitPolyline"
-      >
-        Fit map to polyline
+      <b-button variant="outline-primary" @click="fitPolyline">
+        放大地圖
       </b-button>
 
       <b-row class="mt-2">
         <b-col md="6">
-          <b-form-group label="Contol Layers position: ">
-            <b-form-select
-              v-model="layersPosition"
-              :options="Positions"
-            />
+          <b-form-group label="地圖控制項位置: ">
+            <b-form-select v-model="layersPosition" :options="Positions" />
           </b-form-group>
-
         </b-col>
         <b-col md="6">
           <b-form-group label="Attribution position:">
-            <b-form-select
-              v-model="attributionPosition"
-              :options="Positions"
-            />
+            <b-form-select v-model="attributionPosition" :options="Positions" />
           </b-form-group>
         </b-col>
       </b-row>
-
     </div>
 
     <!-- map -->
@@ -73,10 +62,7 @@
         <l-popup :content="marker.tooltip" />
         <l-tooltip :content="marker.tooltip" />
       </l-marker>
-      <l-layer-group
-        layer-type="overlay"
-        name="Layer polyline"
-      >
+      <l-layer-group layer-type="overlay" name="圖層2">
         <l-polyline
           v-for="item in polylines"
           :key="item.id"
@@ -90,7 +76,7 @@
         :key="item.id"
         :visible.sync="item.visible"
         layer-type="overlay"
-        name="Layer 1"
+        name="圖層1"
       >
         <l-layer-group :visible="item.markersVisible">
           <l-marker
@@ -117,12 +103,9 @@
 </template>
 
 <script>
-
 /* eslint-disable global-require */
-import BCardCode from '@/@core/components/b-card-code/BCardCode.vue'
-import {
-  BButton, BFormSelect, BRow, BCol, BFormGroup,
-} from 'bootstrap-vue'
+import BCardCode from '@/@core/components/b-card-code/BCardCode.vue';
+import { BButton, BFormSelect, BRow, BCol, BFormGroup } from 'bootstrap-vue';
 import {
   LMap,
   LTileLayer,
@@ -135,18 +118,18 @@ import {
   LControlAttribution,
   LControlScale,
   LControlLayers,
-} from 'vue2-leaflet'
-import { latLngBounds, Icon } from 'leaflet'
+} from 'vue2-leaflet';
+import { latLngBounds, Icon } from 'leaflet';
 
-import { codeLayerGroup } from './code'
+import { codeLayerGroup } from './code';
 
 // eslint-disable-next-line no-underscore-dangle
-delete Icon.Default.prototype._getIconUrl
+delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-})
+});
 /* eslint-disable global-require */
 const markers1 = [
   {
@@ -176,7 +159,7 @@ const markers1 = [
   { position: { lng: -0.812988, lat: 47.724545 } },
   { position: { lng: -1.054688, lat: 47.680183 } },
   { position: { lng: -1.219482, lat: 47.41322 } },
-]
+];
 
 const poly1 = [
   { lng: -1.219482, lat: 47.41322 },
@@ -202,24 +185,24 @@ const poly1 = [
   { lng: -0.812988, lat: 47.724545 },
   { lng: -1.054688, lat: 47.680183 },
   { lng: -1.219482, lat: 47.41322 },
-]
+];
 
 const tileProviders = [
   {
-    name: 'OpenStreetMap',
+    name: 'OpenStreetMap地圖系統',
     visible: true,
     attribution:
       '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   },
   {
-    name: 'OpenTopoMap',
+    name: 'OpenTopoMap地圖系統',
     visible: false,
     url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
     attribution:
       'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
   },
-]
+];
 
 export default {
   name: 'Example',
@@ -327,28 +310,28 @@ export default {
         { lat: 51.476483373501964, lng: -0.14668464136775586 },
         { lat: 51.52948330894063, lng: -0.019140238291583955 },
       ),
-    }
+    };
   },
   methods: {
     alert(item) {
       // eslint-disable-next-line no-alert
-      alert(`this is ${JSON.stringify(item)}`)
+      alert(`this is ${JSON.stringify(item)}`);
     },
     addMarker() {
       const newMarker = {
         position: { lat: 50.5505, lng: -0.09 },
         draggable: true,
         visible: true,
-      }
-      this.markers.push(newMarker)
+      };
+      this.markers.push(newMarker);
     },
     removeMarker(index) {
-      this.markers.splice(index, 1)
+      this.markers.splice(index, 1);
     },
     fitPolyline() {
-      const bounds = latLngBounds(markers1.map(o => o.position))
-      this.bounds = bounds
+      const bounds = latLngBounds(markers1.map(o => o.position));
+      this.bounds = bounds;
     },
   },
-}
+};
 </script>

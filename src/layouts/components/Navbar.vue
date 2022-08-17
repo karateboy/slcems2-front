@@ -19,7 +19,7 @@
     </div>
     <b-img
       src="@/assets/images/logo/logo.svg"
-      width="120px"
+      width="90px"
       fluid
       class="float-right"
     ></b-img>
