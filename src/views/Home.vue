@@ -1,23 +1,20 @@
 <template>
   <div>
-    <b-row>
-      <b-col cols="3">
+    <b-row class="match-height">
+      <b-col lg="3" md="6" sm="12">
         <b-card
           class="p-1"
           img-src="https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/04.svg"
           img-height="120"
-          img-bottom
+          img-end
           img-fluid
           header="天氣"
           header-tag="h1"
+          sub-title="多雲。降雨機率 30%。溫度攝氏25度。舒適。偏東風。相對濕度99%。"
         >
-          <b-card-text
-            >多雲。降雨機率
-            30%。溫度攝氏25度。舒適。偏東風。相對濕度99%。</b-card-text
-          >
         </b-card>
       </b-col>
-      <b-col cols="9"
+      <b-col lg="9" md="6" sm="12"
         ><b-card header="全區概要" header-tag="h1">
           <b-row class="text-center">
             <b-col class="bg-warning m-1 rounded">
@@ -43,9 +40,9 @@
           </b-row>
         </b-card></b-col
       >
-      <b-col cols="9"
+      <b-col lg="9" md="12"
         ><b-card header="區域用電概要" header-tag="h1">
-          <b-table :items="powerUsage" :fields="fields">
+          <b-table stacked="md" :items="powerUsage" :fields="fields" responsive>
             <template #cell(percentage)="row">
               <b-progress
                 :value="row.item.percentage"
@@ -62,17 +59,17 @@
           </b-table>
         </b-card></b-col
       >
-      <b-col cols="3">
+      <b-col lg="3" md="6" sm="12">
         <b-card
           img-src="../assets/images/map.png"
           img-fluid
-          img-bottom
+          overlay
           header="區域概覽"
           header-tag="h1"
         ></b-card>
       </b-col>
-      <b-col cols="3"><card-analytic-goal-overview /></b-col>
-      <b-col cols="9"><card-analytic-revenue /></b-col>
+      <b-col lg="3" md="6" sm="12"><card-analytic-goal-overview /></b-col>
+      <b-col lg="9" md="6" sm="12"><card-analytic-revenue /></b-col>
     </b-row>
   </div>
 </template>
@@ -144,11 +141,11 @@ export default Vue.extend({
       },
       {
         key: 'name',
-        label: '名稱',
+        label: '單位名稱',
       },
       {
         key: 'percentage',
-        label: '即時用電量',
+        label: '用電量',
       },
       {
         key: 'status',
