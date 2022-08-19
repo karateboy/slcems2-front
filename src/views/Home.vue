@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-row>
-      <b-col cols="9">
+    <b-row class="match-height">
+      <b-col lg="9" sm="12">
         <b-jumbotron header="能源管理大數據平台" header-tag="h2">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -27,10 +27,14 @@
           </p>
         </b-jumbotron>
       </b-col>
-      <b-col cols="3">
-        <b-img src="../assets/images/pages/coming-soon.svg" fluid-grow></b-img>
+      <b-col lg="3" sm="12">
+        <b-img
+          src="../assets/images/pages/coming-soon.svg"
+          fluid-grow
+          class="p-1"
+        ></b-img>
       </b-col>
-      <b-col cols="3">
+      <b-col lg="3" sm="6">
         <b-card border-variant="danger">
           <strong
             ><h1>10 處</h1>
@@ -38,7 +42,7 @@
           >
         </b-card>
       </b-col>
-      <b-col cols="3">
+      <b-col lg="3" sm="6">
         <b-card border-variant="danger">
           <strong
             ><h1>9,99瓩</h1>
@@ -46,7 +50,7 @@
           >
         </b-card>
       </b-col>
-      <b-col cols="3">
+      <b-col lg="3" sm="6">
         <b-card border-variant="danger">
           <strong
             ><h1>9,99瓩</h1>
@@ -54,7 +58,7 @@
           >
         </b-card>
       </b-col>
-      <b-col cols="3">
+      <b-col lg="3" sm="6">
         <b-card border-variant="danger">
           <strong
             ><h1>-</h1>
